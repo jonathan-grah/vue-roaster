@@ -1,6 +1,6 @@
 {
   "author": "Jonathan Graham <theflametrooper@gmail.com>",
-  "description": "Material Design style Toast (Alert) for Vue",
+  "description": "Toast alerts (initially developed for Vue.js with a material-design style)",
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
@@ -24,10 +24,10 @@
   },
   "license": "MIT",
   "main": "dist/vue-roaster.js",
-  "name": "vue-roaster",
+  "name": "toasters",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "dev": "webpack-dev-server --inline --hot --content-base example/"
   },
-  "version": "1.1.2"
+  "version": "1.1.3"
 }

@@ -1,6 +1,6 @@
-# vue-roaster
+# toasters
 
-> Material Design style Toast (Alert) for Vue
+> Toast alerts (initially developed for Vue.js with a material-design style)
 
 ## Installation
 
@@ -25,7 +25,7 @@
 </script>
 ```
 
-See [example](https://github.com/atjonathan/vue-roaster/tree/master/example) folder for more details.
+<!--See [example](https://github.com/atjonathan/vue-roaster/tree/master/example) folder for more details.-->
 
 ## Contributing
 

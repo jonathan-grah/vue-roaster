@@ -2,32 +2,18 @@
   "author": "Jonathan Graham <theflametrooper@gmail.com>",
   "description": "Toast alerts (initially developed for Vue.js with a material-design style)",
   "devDependencies": {
-    "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-plugin-transform-runtime": "^6.0.0",
-    "babel-preset-es2015": "^6.0.0",
-    "babel-preset-stage-2": "^6.0.0",
-    "cross-env": "^1.0.6",
-    "css-loader": "^0.23.0",
-    "dragdealer": "^0.9.9",
-    "file-loader": "^0.8.4",
-    "json-loader": "^0.5.4",
-    "node-sass": "^3.11.2",
-    "sass-loader": "^4.0.2",
-    "url-loader": "^0.5.7",
-    "vue-hot-reload-api": "^1.2.0",
-    "vue-html-loader": "^1.0.0",
-    "vue-loader": "^8.2.1",
-    "vue-style-loader": "^1.0.0",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0"
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
   },
   "license": "MIT",
-  "main": "dist/vue-roaster.js",
+  "main": "dist/toasters.js",
   "name": "toasters",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "dev": "webpack-dev-server --inline --hot --content-base example/"
+    "build": "webpack --mode=production --progress --hide-modules",
+    "dev": "webpack --mode=development --watch"
   },
   "version": "1.1.3"
 }

@@ -1,77 +1,16 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require("path")
 
 module.exports = {
-    entry: {
-    'vue-roaster': ['vue', './src/index.js'],
-    'example': './example/main.js'
-  },
+  entry: "./src/toasters.js",
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist',
-    filename: '[name].js',
-    library: 'Toast',
-    libraryTarget: 'umd'
-  },
-  resolve: {
-    alias: {
-      'jquery-ui': path.resolve(__dirname, './lib/jquery-ui.min.js'),
-      modules: path.join(__dirname, 'node_modules')
-    }
-  },
-  resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
+    path: path.resolve(__dirname, "dist"),
+    filename: "toasters.js",
+    library: "toasters",
+    libraryTarget: "umd"
   },
   module: {
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
-      },
-      {
-        test: /\.html$/,
-        loader: 'vue-html'
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'url',
-        query: {
-          limit: 10000,
-          name: '[name].[ext]?[hash]'
-        }
-      }
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
     ]
-  },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true
-  },
-  devtool: '#eval-source-map'
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.optimize.OccurenceOrderPlugin()
-  ])
+  }
 }

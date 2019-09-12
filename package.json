@@ -1,5 +1,12 @@
 {
   "author": "Jonathan Graham <theflametrooper@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/jonathan-grah/vue-roaster/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathan-grah/vue-roaster.git"
+  },
   "description": "Toast alerts (initially developed for Vue.js with a material-design style)",
   "devDependencies": {
     "@babel/core": "^7.5.5",

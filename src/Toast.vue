@@ -101,11 +101,11 @@
         border-radius: 2px;
         cursor: pointer;
         top: 20px;
-        right: 200px;
+        /* right: 200px; */
         min-width: 225px;
         clear: both;
         margin-top: 10px;
-        position: static;
+        /* position: static; */
         height: auto;
         background-color: #323232;
         padding: 10px 25px;

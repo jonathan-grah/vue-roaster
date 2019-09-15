@@ -18,16 +18,20 @@
 
     export default {
         ready() {
-            new Toast({ content: "This is a test for content", persistant: true, position: {
-                horizontal: "right",
-                vertical: "bottom"
-            }});
+            new Toast({
+                content: "This is a test for content",
+                persistant: true,
+                position: {
+                    horizontal: "right",
+                    vertical: "bottom"
+                }
+            });
         }
     }
 </script>
 ```
 
-<!--See [example](https://github.com/atjonathan/vue-roaster/tree/master/example) folder for more details.-->
+<!--See [example](https://github.com/jonathan-grah/vue-roaster/tree/master/example) folder for more details.-->
 
 ## Contributing
 
@@ -35,7 +39,7 @@
 # install dependencies
 npm install
 
-# serve example with hot reload at localhost:8080
+# watch files for changes wtih webpack
 npm run dev
 
 # build for production with minification

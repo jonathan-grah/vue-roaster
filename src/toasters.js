@@ -1,18 +1,18 @@
 document.body.style.backgroundColor = "#eee";
 
 const container = document.getElementById("toasts-container");
+console.log(container);
 
 let incrementer = 0;
 
 export default class Toast {
 	// should add type checking
-	constructor({ content, persistant, timeout, position }) {
+	constructor({ content, persistant, timeout }) {
 		this.identifier = `toast-${incrementer}`;
 		incrementer++;
 
 		this.visible = false;
 
-		this.position = position;
 		this.content = content;
 		this.persistant = persistant;
 		this.timeout = timeout;
@@ -37,7 +37,7 @@ export default class Toast {
 
 	display() {
 		if (!this.visible) {
-			container.insertAdjacentHTML("beforeend", `<div class="toast ${this.identifier} toast-${this.position.horizontal} toast-${this.position.vertical}">${this.content}</div>`);
+			container.insertAdjacentHTML("beforeend", `<div class="toast ${this.identifier}">${this.content}</div>`);
 			this.find();
 		} else
 			this.element.innerHTML = this.content;
@@ -53,8 +53,8 @@ export default class Toast {
 			const move = ({ pageX }) => {
 				let opacity = 1.2 - Math.abs(pageX - shiftX - initialX) / 100;
 				if (opacity < 0.15) return this.clear();
-				this.element.style.opacity = 1.2 - Math.abs(pageX - shiftX - initialX) / 100;
-				this.element.style.transform = `translateX(${pageX - shiftX}px)`;
+				this.element.style.opacity = opacity;
+				this.element.style.left = `${pageX - shiftX - initialX}px`;
 			}
 
 			window.addEventListener("mousemove", move, false);
@@ -75,8 +75,3 @@ export default class Toast {
 		this.element.remove();
 	}
 }
-
-const red = new Toast({ content: "ALWAYS RED", persistant: true, position: {
-	horizontal: "left",
-	vertical: "top"
-}});

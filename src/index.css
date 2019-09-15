@@ -1,0 +1,58 @@
+:root {
+	--max-width: 250px;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+#toasts-container {
+	position: fixed;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	top: 20px;
+	left: 20px;
+}
+
+#toasts-container.position-left {
+	right: 0;
+	left: 20px;
+	align-items: flex-start;
+}
+
+#toasts-container.position-right {
+	left: 0;
+	right: 20px;
+	align-items: flex-end;
+}
+
+#toasts-container.position-top {
+	bottom: 0;
+	top: 20px;
+	justify-content: flex-start;
+}
+
+#toasts-container.position-bottom {
+	top: 0;
+	margin-top: -20px;
+	justify-content: flex-end;
+}
+
+.toast {
+	user-select: none;
+	z-index: 10000 !important;
+	border-radius: 2px;
+	cursor: pointer;
+	position: relative;
+	top: 0;
+	height: auto;
+	background-color: #323232;
+	color: #fff;
+	padding: 10px 25px;
+	font-size: 1rem;
+	font-weight: 300;
+	width: var(--max-width);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}

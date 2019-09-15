@@ -4,11 +4,9 @@ const container = document.getElementById("toasts-container");
 
 let incrementer = 0;
 
-class Toast {
+export default class Toast {
 	// should add type checking
-	constructor(content, persistant, timeout, position) {
-		console.log(position);
-
+	constructor({ content, persistant, timeout, position }) {
 		this.identifier = `toast-${incrementer}`;
 		incrementer++;
 
@@ -39,7 +37,7 @@ class Toast {
 
 	display() {
 		if (!this.visible) {
-			container.insertAdjacentHTML("beforeend", `<div class="toast ${this.identifier} toast-${this.position} toast-bottom">${this.content}</div>`);
+			container.insertAdjacentHTML("beforeend", `<div class="toast ${this.identifier} toast-${this.position.horizontal} toast-${this.position.vertical}">${this.content}</div>`);
 			this.find();
 		} else
 			this.element.innerHTML = this.content;
@@ -49,28 +47,18 @@ class Toast {
 
 	dragListener() {
 		this.element.addEventListener("mousedown", event => {
-
-			// this.element.style.position = "absolute";
-
-			// this.element.ondragstart = () => {
-			// 	return false;
-			// }
-
 			let shiftX = event.clientX - this.element.getBoundingClientRect().x;
 
 			const move = ({ pageX }) => {
-				this.element.style.transform = `translate(${pageX - shiftX}px)`;
+				console.log(pageX - shiftX - );
+				this.element.style.transform = `translateX(${pageX - shiftX}px)`;
 			}
-
-			console.log("Mousedown");
 
 			window.addEventListener("mousemove", move, false);
 
 			window.addEventListener("mouseup", () => {
-				console.log("Mouseup");
 				window.removeEventListener("mousemove", move, false);
 			}, false);
-
 		}, false);
 	}
 
@@ -85,22 +73,7 @@ class Toast {
 	}
 }
 
-// const add = (
-// 	content,
-// 	persistant,
-// 	timeout,
-// ) => {
-// 	const red = new Toast(
-// 		content,
-// 		persistant,
-// 		timeout
-// 	);
-// }
-
-const red = new Toast("This is a test for content", true, 5000, "right");
-const pink = new Toast("ALWAYS HERE AND ALWAYS PINK", true, 5000, "left");
-
-
-export default {
-	
-};
+const red = new Toast({ content: "ALWAYS RED", persistant: true, position: {
+	horizontal: "left",
+	vertical: "top"
+}});

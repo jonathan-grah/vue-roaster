@@ -4,7 +4,7 @@
 
 ## Installation
 
-`npm install -S  --production vue-roaster`
+`npm install -S  --production toasters`
 
 ## Usage
 
@@ -14,13 +14,15 @@
 </template>
 
 <script>
-    import { Toast } from 'vue-roaster';
+    import { Toast } from 'toasters';
 
     export default {
         ready() {
-            Toast.methods.addToast("An Example Toast", 5000);
-        },
-        components: { Toast }
+            new Toast({ content: "This is a test for content", persistant: true, position: {
+                horizontal: "right",
+                vertical: "bottom"
+            }});
+        }
     }
 </script>
 ```

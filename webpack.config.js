@@ -1,11 +1,14 @@
 var path = require("path")
 
 module.exports = {
-  entry: "./src/toasters.js",
+  entry: {
+    toasters: "./src/index.js",
+    example: "./example/index.js"
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "toasters.js",
-    library: "toasters",
+    filename: "[name].js",
+    library: "Toast",
     libraryTarget: "umd"
   },
   module: {

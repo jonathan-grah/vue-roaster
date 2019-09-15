@@ -47,10 +47,13 @@ export default class Toast {
 
 	dragListener() {
 		this.element.addEventListener("mousedown", event => {
-			let shiftX = event.clientX - this.element.getBoundingClientRect().x;
+			const initialX = this.element.getBoundingClientRect().x;
+			let shiftX = event.clientX - initialX;
 
 			const move = ({ pageX }) => {
-				console.log(pageX - shiftX - );
+				let opacity = 1.2 - Math.abs(pageX - shiftX - initialX) / 100;
+				if (opacity < 0.15) return this.clear();
+				this.element.style.opacity = 1.2 - Math.abs(pageX - shiftX - initialX) / 100;
 				this.element.style.transform = `translateX(${pageX - shiftX}px)`;
 			}
 

@@ -44,7 +44,7 @@ new Toast({
 # install dependencies
 npm install
 
-# watch files for changes wtih webpack
+# watch files for changes with webpack
 npm run dev
 
 # build for production with minification

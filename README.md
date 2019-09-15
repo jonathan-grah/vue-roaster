@@ -4,32 +4,37 @@
 
 ## Installation
 
-`npm install -S  --production toasters`
+`npm install --save  --production toasters`
 
 ## Usage
 
-```
-<template>
-    <toast></toast>
-</template>
+**HTML:**
 
-<script>
-    import { Toast } from 'toasters';
-
-    export default {
-        ready() {
-            new Toast({
-                content: "This is a test for content",
-                persistant: true,
-                position: {
-                    horizontal: "right",
-                    vertical: "bottom"
-                }
-            });
-        }
-    }
-</script>
+```html
+<div id="toasts-container" class="position-right position-bottom"></div>
 ```
+
+**JS:**
+
+```js
+import Toast from "toasters";
+
+new Toast({
+	content: "Hello World",
+	persistant: true
+});
+```
+
+**Preview:**
+
+![preview of visible toast on webpage](https://i.imgur.com/7kIH6Oi.png)
+
+## Potential future additions
+- Design improvements
+- Error handling (i.e. you haven't provided any content for the toast)
+- Ability to parse markdown or html
+- Ability to change to persistent
+- Small reaction to drag e.g. push it over the edge
 
 <!--See [example](https://github.com/jonathan-grah/vue-roaster/tree/master/example) folder for more details.-->
 

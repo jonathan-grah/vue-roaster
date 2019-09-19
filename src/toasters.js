@@ -51,7 +51,6 @@ export default class Toast {
 
 			const move = ({ pageX }) => {
 				let opacity = 1.2 - Math.abs(pageX - shiftX - initialX) / 100;
-				if (opacity < 0.15) return this.clear();
 				this.element.style.opacity = opacity;
 				this.element.style.left = `${pageX - shiftX - initialX}px`;
 			}
@@ -59,6 +58,15 @@ export default class Toast {
 			window.addEventListener("mousemove", move, false);
 
 			window.addEventListener("mouseup", () => {
+				if (this.element.style.opacity < 0.15) return this.clear();
+				else {
+					this.element.style.opacity = 1;
+					this.element.style.left = 0;
+					this.element.style.transition = "opacity .2s linear, left .2s linear";
+					setTimeout(() => {
+						this.element.style.transition = null;
+					}, 200)
+				}
 				window.removeEventListener("mousemove", move, false);
 			}, false);
 		}, false);

@@ -38,7 +38,6 @@ new Toast({
 - Error handling (i.e. you haven't provided any content for the toast)
 - Ability to parse markdown or html
 - Ability to change to persistent
-- Small reaction to drag e.g. push it over the edge
 
 <!--See [example](https://github.com/jonathan-grah/vue-roaster/tree/master/example) folder for more details.-->
 

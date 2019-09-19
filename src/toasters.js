@@ -1,7 +1,6 @@
 document.body.style.backgroundColor = "#eee";
 
-const container = document.getElementById("toasts-container");
-console.log(container);
+const container = document.getElementById("toasts-content");
 
 let incrementer = 0;
 

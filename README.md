@@ -11,7 +11,11 @@
 **HTML:**
 
 ```html
-<div id="toasts-container" class="position-right position-bottom"></div>
+<div id="toasts-container" class="position-right position-bottom">
+	<div id="toasts-content">
+		<!-- toasts will be added or removed from here -->
+	</div>
+</div>
 ```
 
 **JS:**

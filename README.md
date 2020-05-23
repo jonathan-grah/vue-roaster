@@ -4,7 +4,7 @@
 
 ## Installation
 
-`npm install --save  --production toasters`
+`npm install --save --production toasters`
 
 ## Usage
 
@@ -12,9 +12,9 @@
 
 ```html
 <div id="toasts-container" class="position-right position-bottom">
-	<div id="toasts-content">
-		<!-- toasts will be added or removed from here -->
-	</div>
+  <div id="toasts-content">
+    <!-- toasts will be added or removed from here -->
+  </div>
 </div>
 ```
 
@@ -24,8 +24,8 @@
 import Toast from "toasters";
 
 new Toast({
-	content: "Hello World",
-	persistant: true
+  content: "Hello World",
+  persistant: true
 });
 ```
 
@@ -34,6 +34,7 @@ new Toast({
 ![preview of visible toast on webpage](https://i.imgur.com/7kIH6Oi.png)
 
 ## Potential future additions
+
 - Design improvements
 - Error handling (i.e. you haven't provided any content for the toast)
 - Ability to parse markdown or html
@@ -43,7 +44,7 @@ new Toast({
 
 ## Contributing
 
-``` bash
+```bash
 # install dependencies
 npm install
 

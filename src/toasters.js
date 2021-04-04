@@ -1,5 +1,3 @@
-document.body.style.backgroundColor = "#eee";
-
 const container = document.getElementById("toasts-content");
 
 let incrementer = 0;

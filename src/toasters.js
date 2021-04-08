@@ -10,10 +10,11 @@ export default class Toast {
 
 		this.visible = false;
 
-		this.content = content;
 		this.persistent = persistent !== undefined ? persistent : false;
 		this.timeout = timeout ? timeout : 6000;
 		this.interactable = interactable !== undefined ? interactable : true;
+
+		this.content = content;
 
 		if (!this.persistent) this.startTimer();
 
@@ -32,6 +33,18 @@ export default class Toast {
 			this.find();
 		} else
 			this.element.innerHTML = this.content;
+
+		if (this.interactable) {
+			// create "close" icon
+			const closeIcon = document.createElement("span");
+			closeIcon.classList.add("close-icon");
+
+			// add "close" icon to toast
+			this.element.appendChild(closeIcon);
+
+			// detect click on "close" icon and therefore destroy the toast
+			this.element.children[0].addEventListener("click", () => this.destroy(), false);
+		}
 
 		this.visible = true;
 	}
@@ -86,7 +99,7 @@ export default class Toast {
 	}
 
 	handleInputLoss() {
-		if (this.element.style.opacity < 0.15) return this.destroy();
+		if (this.element.style.opacity && this.element.style.opacity < 0.15) return this.destroy();
 		else {
 			this.element.style.opacity = 1;
 			this.element.style.left = 0;

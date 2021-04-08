@@ -49,12 +49,15 @@ body {
 }
 
 .toast {
+	display: flex;
+    justify-content: space-between;
+	align-items: unset;
 	user-select: none;
 	z-index: 10000 !important;
 	cursor: pointer;
 	top: 0;
 	height: auto;
-	padding: 10px 25px;
+	padding: 10px 10px 10px 25px;
 	font-size: 1rem;
 	font-weight: 300;
 	width: var(--max-width);
@@ -69,4 +72,37 @@ body {
 
 .toast:not(:first-of-type) {
 	margin-top: 5px;
+}
+
+
+.close-icon {
+	min-width: 8px;
+	height: 8px;
+	padding: 8px;
+	position: relative;
+	margin-left: 5px;
+	opacity: 0.6;
+	border-radius: 100%;
+	background-color: rgb(34, 34, 34);
+}
+
+.close-icon:hover {
+	opacity: 1;
+}
+
+.close-icon:before, .close-icon:after {
+	position: absolute;
+	left: 11px;
+	content: ' ';
+	height: 8px;
+	width: 2px;
+	background-color: rgb(245, 245, 245);
+}
+
+.close-icon:before {
+	transform: rotate(45deg);
+}
+
+.close-icon:after {
+	transform: rotate(-45deg);
 }

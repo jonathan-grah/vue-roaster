@@ -1,6 +1,6 @@
 # toasters
 
-> Toast alerts (initially developed for Vue.js with a material-design style)
+> Toast alerts/notifications (initially developed for Vue.js with a material-design style)
 
 ## Installation
 

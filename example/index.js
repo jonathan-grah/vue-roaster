@@ -6,10 +6,22 @@ const TestNotification = new Toast({
 	interactable: false
 });
 
-setTimeout(() => {
-	TestNotification.hide();
+const TestNotification2 = new Toast({
+	content: "Hello World",
+	persistent: true,
+	interactable: true
+});
 
-	setTimeout(() => {
-		TestNotification.show();
-	}, 2000);
-}, 2000);
+const TestNotification3 = new Toast({
+	content: "Hello World",
+	persistent: true,
+	interactable: true
+});
+
+// setTimeout(() => {
+// 	TestNotification.hide();
+
+// 	setTimeout(() => {
+// 		TestNotification.show();
+// 	}, 2000);
+// }, 2000);

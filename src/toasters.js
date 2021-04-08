@@ -4,17 +4,17 @@ let incrementer = 0;
 
 export default class Toast {
 	// should add type checking
-	constructor({ content, persistant, timeout }) {
+	constructor({ content, persistent, timeout }) {
 		this.identifier = `toast-${incrementer}`;
 		incrementer++;
 
 		this.visible = false;
 
 		this.content = content;
-		this.persistant = persistant;
+		this.persistent = persistent;
 		this.timeout = timeout;
 
-		if (!this.persistant) this.startTimer();
+		if (!this.persistent) this.startTimer();
 
 		this.dragListener();
 	}
@@ -29,7 +29,7 @@ export default class Toast {
 	}
 
 	startTimer() {
-		setTimeout(this.clear.bind(this), this.timeout);
+		setTimeout(this.clear.bind(this), this.timeout ? this.timeout : 6000);
 	}
 
 	display() {

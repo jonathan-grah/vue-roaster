@@ -1,1 +1,170 @@
-!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.Toast=e():t.Toast=e()}(window,(function(){return function(t){var e={};function n(o){if(e[o])return e[o].exports;var i=e[o]={i:o,l:!1,exports:{}};return t[o].call(i.exports,i,i.exports,n),i.l=!0,i.exports}return n.m=t,n.c=e,n.d=function(t,e,o){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:o})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var i in t)n.d(o,i,function(e){return t[e]}.bind(null,i));return o},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=1)}([,function(t,e,n){"use strict";n.r(e);n(2);e.default=n(6).default},function(t,e,n){var o=n(3);"string"==typeof o&&(o=[[t.i,o,""]]);var i={insert:"head",singleton:!1};n(5)(o,i);o.locals&&(t.exports=o.locals)},function(t,e,n){(t.exports=n(4)(!1)).push([t.i,":root {\n\t--max-width: 250px;\n}\n\nbody {\n\tpadding: 0;\n\tmargin: 0;\n}\n\n#toasts-container {\n\tposition: fixed;\n\ttop: 20px;\n\tright: 20px;\n}\n\n#toasts-content {\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n#toasts-container.position-left {\n\tright: unset;\n\tleft: 20px;\n\talign-items: flex-start;\n}\n\n#toasts-container.position-right {\n\tleft: unset;\n\tright: 20px;\n\talign-items: flex-end;\n}\n\n#toasts-container.position-top {\n\tbottom: unset;\n\ttop: 20px;\n\tjustify-content: flex-start;\n}\n\n#toasts-container.position-bottom {\n\ttop: unset;\n\tbottom: 20px;\n\tjustify-content: flex-end;\n}\n\n.toast {\n\tuser-select: none;\n\tz-index: 10000 !important;\n\tborder-radius: 2px;\n\tcursor: pointer;\n\tposition: relative;\n\ttop: 0;\n\theight: auto;\n\tbackground-color: #323232;\n\tcolor: #fff;\n\tpadding: 10px 25px;\n\tfont-size: 1rem;\n\tfont-weight: 300;\n\twidth: var(--max-width);\n\tbox-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n}\n\n.toast:not(:first-of-type) {\n\tmargin-top: 5px;\n}\n",""])},function(t,e,n){"use strict";t.exports=function(t){var e=[];return e.toString=function(){return this.map((function(e){var n=function(t,e){var n=t[1]||"",o=t[3];if(!o)return n;if(e&&"function"==typeof btoa){var i=(s=o,a=btoa(unescape(encodeURIComponent(JSON.stringify(s)))),c="sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(a),"/*# ".concat(c," */")),r=o.sources.map((function(t){return"/*# sourceURL=".concat(o.sourceRoot).concat(t," */")}));return[n].concat(r).concat([i]).join("\n")}var s,a,c;return[n].join("\n")}(e,t);return e[2]?"@media ".concat(e[2],"{").concat(n,"}"):n})).join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var o={},i=0;i<this.length;i++){var r=this[i][0];null!=r&&(o[r]=!0)}for(var s=0;s<t.length;s++){var a=t[s];null!=a[0]&&o[a[0]]||(n&&!a[2]?a[2]=n:n&&(a[2]="(".concat(a[2],") and (").concat(n,")")),e.push(a))}},e}},function(t,e,n){"use strict";var o,i={},r=function(){return void 0===o&&(o=Boolean(window&&document&&document.all&&!window.atob)),o},s=function(){var t={};return function(e){if(void 0===t[e]){var n=document.querySelector(e);if(window.HTMLIFrameElement&&n instanceof window.HTMLIFrameElement)try{n=n.contentDocument.head}catch(t){n=null}t[e]=n}return t[e]}}();function a(t,e){for(var n=[],o={},i=0;i<t.length;i++){var r=t[i],s=e.base?r[0]+e.base:r[0],a={css:r[1],media:r[2],sourceMap:r[3]};o[s]?o[s].parts.push(a):n.push(o[s]={id:s,parts:[a]})}return n}function c(t,e){for(var n=0;n<t.length;n++){var o=t[n],r=i[o.id],s=0;if(r){for(r.refs++;s<r.parts.length;s++)r.parts[s](o.parts[s]);for(;s<o.parts.length;s++)r.parts.push(m(o.parts[s],e))}else{for(var a=[];s<o.parts.length;s++)a.push(m(o.parts[s],e));i[o.id]={id:o.id,refs:1,parts:a}}}}function u(t){var e=document.createElement("style");if(void 0===t.attributes.nonce){var o=n.nc;o&&(t.attributes.nonce=o)}if(Object.keys(t.attributes).forEach((function(n){e.setAttribute(n,t.attributes[n])})),"function"==typeof t.insert)t.insert(e);else{var i=s(t.insert||"head");if(!i)throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");i.appendChild(e)}return e}var l,f=(l=[],function(t,e){return l[t]=e,l.filter(Boolean).join("\n")});function d(t,e,n,o){var i=n?"":o.css;if(t.styleSheet)t.styleSheet.cssText=f(e,i);else{var r=document.createTextNode(i),s=t.childNodes;s[e]&&t.removeChild(s[e]),s.length?t.insertBefore(r,s[e]):t.appendChild(r)}}function p(t,e,n){var o=n.css,i=n.media,r=n.sourceMap;if(i&&t.setAttribute("media",i),r&&btoa&&(o+="\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(r))))," */")),t.styleSheet)t.styleSheet.cssText=o;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(o))}}var h=null,v=0;function m(t,e){var n,o,i;if(e.singleton){var r=v++;n=h||(h=u(e)),o=d.bind(null,n,r,!1),i=d.bind(null,n,r,!0)}else n=u(e),o=p.bind(null,n,e),i=function(){!function(t){if(null===t.parentNode)return!1;t.parentNode.removeChild(t)}(n)};return o(t),function(e){if(e){if(e.css===t.css&&e.media===t.media&&e.sourceMap===t.sourceMap)return;o(t=e)}else i()}}t.exports=function(t,e){(e=e||{}).attributes="object"==typeof e.attributes?e.attributes:{},e.singleton||"boolean"==typeof e.singleton||(e.singleton=r());var n=a(t,e);return c(n,e),function(t){for(var o=[],r=0;r<n.length;r++){var s=n[r],u=i[s.id];u&&(u.refs--,o.push(u))}t&&c(a(t,e),e);for(var l=0;l<o.length;l++){var f=o[l];if(0===f.refs){for(var d=0;d<f.parts.length;d++)f.parts[d]();delete i[f.id]}}}}},function(t,e,n){"use strict";function o(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}n.r(e),n.d(e,"default",(function(){return s}));var i=document.getElementById("toasts-content"),r=0,s=function(){function t(e){var n=e.content,o=e.persistant,i=e.timeout;!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.identifier="toast-".concat(r),r++,this.visible=!1,this.content=n,this.persistant=o,this.timeout=i,this.persistant||this.startTimer(),this.dragListener()}var e,n,s;return e=t,(n=[{key:"startTimer",value:function(){setTimeout(this.clear.bind(this),this.timeout)}},{key:"display",value:function(){this.visible?this.element.innerHTML=this.content:(i.insertAdjacentHTML("beforeend",'<div class="toast '.concat(this.identifier,'">').concat(this.content,"</div>")),this.find()),this.visible=!0}},{key:"dragListener",value:function(){var t=this;this.element.addEventListener("mousedown",(function(e){var n=t.element.getBoundingClientRect().x,o=e.clientX-n,i=function(e){var i=e.pageX,r=1.2-Math.abs(i-o-n)/100;t.element.style.opacity=r,t.element.style.left="".concat(i-o-n,"px")};window.addEventListener("mousemove",i,!1),window.addEventListener("mouseup",(function(){t.handleInputLoss(),window.removeEventListener("mousemove",i,!1)}),!1)}),!1),this.element.addEventListener("touchstart",(function(e){var n=t.element.getBoundingClientRect().x,o=e.touches[0].clientX-n,i=function(e){var i=e.touches;if(1===i.length){var r=i[0].pageX,s=1.2-Math.abs(r-o-n)/100;t.element.style.opacity=s,t.element.style.left="".concat(r-o-n,"px")}};window.addEventListener("touchmove",i,!1),window.addEventListener("touchend",(function(){t.handleInputLoss(),window.removeEventListener("touchmove",i,!1)}),!1)}),!1)}},{key:"handleInputLoss",value:function(){var t=this;if(this.element.style.opacity<.15)return this.clear();this.element.style.opacity=1,this.element.style.left=0,this.element.style.transition="opacity .2s linear, left .2s linear",setTimeout((function(){t.element.style.transition=null}),200)}},{key:"find",value:function(){for(var t=0;t<i.childNodes.length;t++)if(i.childNodes[t].classList.contains(this.identifier))return this.element=i.childNodes[t]}},{key:"clear",value:function(){this.element.remove()}},{key:"content",get:function(){return this._content},set:function(t){this._content=t,this.display()}}])&&o(e.prototype,n),s&&o(e,s),t}()}])}));
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["Toast"] = factory();
+	else
+		root["Toast"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/index.css":
+/*!*************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/index.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \":root {\\n\\t--max-width: 250px;\\n}\\n\\nbody {\\n\\tpadding: 0;\\n\\tmargin: 0;\\n}\\n\\n#toasts-container {\\n\\tposition: fixed;\\n\\ttop: 20px;\\n\\tright: 20px;\\n}\\n\\n#toasts-content {\\n\\tdisplay: flex;\\n\\tflex-direction: column;\\n}\\n\\n#toasts-container.position-left {\\n\\tright: unset;\\n\\tleft: 20px;\\n\\talign-items: flex-start;\\n}\\n\\n#toasts-container.position-right {\\n\\tleft: unset;\\n\\tright: 20px;\\n\\talign-items: flex-end;\\n}\\n\\n#toasts-container.position-top {\\n\\tbottom: unset;\\n\\ttop: 20px;\\n\\tjustify-content: flex-start;\\n}\\n\\n#toasts-container.position-bottom {\\n\\ttop: unset;\\n\\tbottom: 20px;\\n\\tjustify-content: flex-end;\\n}\\n\\n.toast {\\n\\tuser-select: none;\\n\\tz-index: 10000 !important;\\n\\tborder-radius: 2px;\\n\\tcursor: pointer;\\n\\tposition: relative;\\n\\ttop: 0;\\n\\theight: auto;\\n\\tbackground-color: #323232;\\n\\tcolor: #fff;\\n\\tpadding: 10px 25px;\\n\\tfont-size: 1rem;\\n\\tfont-weight: 300;\\n\\twidth: var(--max-width);\\n\\tbox-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\\n}\\n\\n.toast:not(:first-of-type) {\\n\\tmargin-top: 5px;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack://Toast/./src/index.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery, dedupe) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var i = 0; i < this.length; i++) {\n        // eslint-disable-next-line prefer-destructuring\n        var id = this[i][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = [].concat(modules[_i]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        // eslint-disable-next-line no-continue\n        continue;\n      }\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot || '').concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}\n\n//# sourceURL=webpack://Toast/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function memorize() {\n    if (typeof memo === 'undefined') {\n      // Test for IE <= 9 as proposed by Browserhacks\n      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805\n      // Tests for existence of standard globals is to allow style-loader\n      // to operate correctly into non-standard environments\n      // @see https://github.com/webpack-contrib/style-loader/issues/177\n      memo = Boolean(window && document && document.all && !window.atob);\n    }\n\n    return memo;\n  };\n}();\n\nvar getTarget = function getTarget() {\n  var memo = {};\n  return function memorize(target) {\n    if (typeof memo[target] === 'undefined') {\n      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself\n\n      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n        try {\n          // This will throw an exception if access to iframe is blocked\n          // due to cross-origin restrictions\n          styleTarget = styleTarget.contentDocument.head;\n        } catch (e) {\n          // istanbul ignore next\n          styleTarget = null;\n        }\n      }\n\n      memo[target] = styleTarget;\n    }\n\n    return memo[target];\n  };\n}();\n\nvar stylesInDom = [];\n\nfunction getIndexByIdentifier(identifier) {\n  var result = -1;\n\n  for (var i = 0; i < stylesInDom.length; i++) {\n    if (stylesInDom[i].identifier === identifier) {\n      result = i;\n      break;\n    }\n  }\n\n  return result;\n}\n\nfunction modulesToDom(list, options) {\n  var idCountMap = {};\n  var identifiers = [];\n\n  for (var i = 0; i < list.length; i++) {\n    var item = list[i];\n    var id = options.base ? item[0] + options.base : item[0];\n    var count = idCountMap[id] || 0;\n    var identifier = \"\".concat(id, \" \").concat(count);\n    idCountMap[id] = count + 1;\n    var index = getIndexByIdentifier(identifier);\n    var obj = {\n      css: item[1],\n      media: item[2],\n      sourceMap: item[3]\n    };\n\n    if (index !== -1) {\n      stylesInDom[index].references++;\n      stylesInDom[index].updater(obj);\n    } else {\n      stylesInDom.push({\n        identifier: identifier,\n        updater: addStyle(obj, options),\n        references: 1\n      });\n    }\n\n    identifiers.push(identifier);\n  }\n\n  return identifiers;\n}\n\nfunction insertStyleElement(options) {\n  var style = document.createElement('style');\n  var attributes = options.attributes || {};\n\n  if (typeof attributes.nonce === 'undefined') {\n    var nonce =  true ? __webpack_require__.nc : undefined;\n\n    if (nonce) {\n      attributes.nonce = nonce;\n    }\n  }\n\n  Object.keys(attributes).forEach(function (key) {\n    style.setAttribute(key, attributes[key]);\n  });\n\n  if (typeof options.insert === 'function') {\n    options.insert(style);\n  } else {\n    var target = getTarget(options.insert || 'head');\n\n    if (!target) {\n      throw new Error(\"Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.\");\n    }\n\n    target.appendChild(style);\n  }\n\n  return style;\n}\n\nfunction removeStyleElement(style) {\n  // istanbul ignore if\n  if (style.parentNode === null) {\n    return false;\n  }\n\n  style.parentNode.removeChild(style);\n}\n/* istanbul ignore next  */\n\n\nvar replaceText = function replaceText() {\n  var textStore = [];\n  return function replace(index, replacement) {\n    textStore[index] = replacement;\n    return textStore.filter(Boolean).join('\\n');\n  };\n}();\n\nfunction applyToSingletonTag(style, index, remove, obj) {\n  var css = remove ? '' : obj.media ? \"@media \".concat(obj.media, \" {\").concat(obj.css, \"}\") : obj.css; // For old IE\n\n  /* istanbul ignore if  */\n\n  if (style.styleSheet) {\n    style.styleSheet.cssText = replaceText(index, css);\n  } else {\n    var cssNode = document.createTextNode(css);\n    var childNodes = style.childNodes;\n\n    if (childNodes[index]) {\n      style.removeChild(childNodes[index]);\n    }\n\n    if (childNodes.length) {\n      style.insertBefore(cssNode, childNodes[index]);\n    } else {\n      style.appendChild(cssNode);\n    }\n  }\n}\n\nfunction applyToTag(style, options, obj) {\n  var css = obj.css;\n  var media = obj.media;\n  var sourceMap = obj.sourceMap;\n\n  if (media) {\n    style.setAttribute('media', media);\n  } else {\n    style.removeAttribute('media');\n  }\n\n  if (sourceMap && typeof btoa !== 'undefined') {\n    css += \"\\n/*# sourceMappingURL=data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), \" */\");\n  } // For old IE\n\n  /* istanbul ignore if  */\n\n\n  if (style.styleSheet) {\n    style.styleSheet.cssText = css;\n  } else {\n    while (style.firstChild) {\n      style.removeChild(style.firstChild);\n    }\n\n    style.appendChild(document.createTextNode(css));\n  }\n}\n\nvar singleton = null;\nvar singletonCounter = 0;\n\nfunction addStyle(obj, options) {\n  var style;\n  var update;\n  var remove;\n\n  if (options.singleton) {\n    var styleIndex = singletonCounter++;\n    style = singleton || (singleton = insertStyleElement(options));\n    update = applyToSingletonTag.bind(null, style, styleIndex, false);\n    remove = applyToSingletonTag.bind(null, style, styleIndex, true);\n  } else {\n    style = insertStyleElement(options);\n    update = applyToTag.bind(null, style, options);\n\n    remove = function remove() {\n      removeStyleElement(style);\n    };\n  }\n\n  update(obj);\n  return function updateStyle(newObj) {\n    if (newObj) {\n      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {\n        return;\n      }\n\n      update(obj = newObj);\n    } else {\n      remove();\n    }\n  };\n}\n\nmodule.exports = function (list, options) {\n  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>\n  // tags it will allow on a page\n\n  if (!options.singleton && typeof options.singleton !== 'boolean') {\n    options.singleton = isOldIE();\n  }\n\n  list = list || [];\n  var lastIdentifiers = modulesToDom(list, options);\n  return function update(newList) {\n    newList = newList || [];\n\n    if (Object.prototype.toString.call(newList) !== '[object Array]') {\n      return;\n    }\n\n    for (var i = 0; i < lastIdentifiers.length; i++) {\n      var identifier = lastIdentifiers[i];\n      var index = getIndexByIdentifier(identifier);\n      stylesInDom[index].references--;\n    }\n\n    var newLastIdentifiers = modulesToDom(newList, options);\n\n    for (var _i = 0; _i < lastIdentifiers.length; _i++) {\n      var _identifier = lastIdentifiers[_i];\n\n      var _index = getIndexByIdentifier(_identifier);\n\n      if (stylesInDom[_index].references === 0) {\n        stylesInDom[_index].updater();\n\n        stylesInDom.splice(_index, 1);\n      }\n    }\n\n    lastIdentifiers = newLastIdentifiers;\n  };\n};\n\n//# sourceURL=webpack://Toast/./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js?");
+
+/***/ }),
+
+/***/ "./src/index.css":
+/*!***********************!*\
+  !*** ./src/index.css ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js!./index.css */ \"./node_modules/css-loader/dist/cjs.js!./src/index.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack://Toast/./src/index.css?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__(/*! ./toasters */ \"./src/toasters.js\")[\"default\"]);\n\n//# sourceURL=webpack://Toast/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/toasters.js":
+/*!*************************!*\
+  !*** ./src/toasters.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Toast; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar container = document.getElementById(\"toasts-content\");\nvar incrementer = 0;\n\nvar Toast = /*#__PURE__*/function () {\n  // should add type checking\n  function Toast(_ref) {\n    var content = _ref.content,\n        persistent = _ref.persistent,\n        timeout = _ref.timeout;\n\n    _classCallCheck(this, Toast);\n\n    this.identifier = \"toast-\".concat(incrementer);\n    incrementer++;\n    this.visible = false;\n    this.content = content;\n    this.persistent = persistent;\n    this.timeout = timeout;\n    if (!this.persistent) this.startTimer();\n    this.dragListener();\n  }\n\n  _createClass(Toast, [{\n    key: \"content\",\n    get: function get() {\n      return this._content;\n    },\n    set: function set(value) {\n      this._content = value;\n      this.display();\n    }\n  }, {\n    key: \"startTimer\",\n    value: function startTimer() {\n      setTimeout(this.clear.bind(this), this.timeout ? this.timeout : 6000);\n    }\n  }, {\n    key: \"display\",\n    value: function display() {\n      if (!this.visible) {\n        container.insertAdjacentHTML(\"beforeend\", \"<div class=\\\"toast \".concat(this.identifier, \"\\\">\").concat(this.content, \"</div>\"));\n        this.find();\n      } else this.element.innerHTML = this.content;\n\n      this.visible = true;\n    }\n  }, {\n    key: \"dragListener\",\n    value: function dragListener() {\n      var _this = this;\n\n      /** handles mouse drag **/\n      this.element.addEventListener(\"mousedown\", function (event) {\n        var initialX = _this.element.getBoundingClientRect().x;\n\n        var shiftX = event.clientX - initialX;\n\n        var move = function move(_ref2) {\n          var pageX = _ref2.pageX;\n          var opacity = 1.2 - Math.abs(pageX - shiftX - initialX) / 100;\n          _this.element.style.opacity = opacity;\n          _this.element.style.left = \"\".concat(pageX - shiftX - initialX, \"px\");\n        };\n\n        window.addEventListener(\"mousemove\", move, false);\n        window.addEventListener(\"mouseup\", function () {\n          _this.handleInputLoss();\n\n          window.removeEventListener(\"mousemove\", move, false);\n        }, false);\n      }, false);\n      /** handles touch devices **/\n\n      this.element.addEventListener(\"touchstart\", function (event) {\n        var initialX = _this.element.getBoundingClientRect().x;\n\n        var shiftX = event.touches[0].clientX - initialX;\n\n        var move = function move(_ref3) {\n          var touches = _ref3.touches;\n\n          // if multiple touches on device, none are registered to the toast anymore\n          if (touches.length === 1) {\n            var pageX = touches[0].pageX;\n            var opacity = 1.2 - Math.abs(pageX - shiftX - initialX) / 100;\n            _this.element.style.opacity = opacity;\n            _this.element.style.left = \"\".concat(pageX - shiftX - initialX, \"px\");\n          }\n        };\n\n        window.addEventListener(\"touchmove\", move, false);\n        window.addEventListener(\"touchend\", function () {\n          _this.handleInputLoss();\n\n          window.removeEventListener(\"touchmove\", move, false);\n        }, false);\n      }, false);\n    }\n  }, {\n    key: \"handleInputLoss\",\n    value: function handleInputLoss() {\n      var _this2 = this;\n\n      if (this.element.style.opacity < 0.15) return this.clear();else {\n        this.element.style.opacity = 1;\n        this.element.style.left = 0;\n        this.element.style.transition = \"opacity .2s linear, left .2s linear\";\n        setTimeout(function () {\n          _this2.element.style.transition = null;\n        }, 200);\n      }\n    }\n  }, {\n    key: \"find\",\n    value: function find() {\n      for (var i = 0; i < container.childNodes.length; i++) {\n        if (container.childNodes[i].classList.contains(this.identifier)) return this.element = container.childNodes[i];\n      }\n    }\n  }, {\n    key: \"clear\",\n    value: function clear() {\n      this.element.remove();\n    }\n  }]);\n\n  return Toast;\n}();\n\n\n\n//# sourceURL=webpack://Toast/./src/toasters.js?");
+
+/***/ })
+
+/******/ });
+});

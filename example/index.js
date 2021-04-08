@@ -1,7 +1,7 @@
 import Toast from "../dist/toasters.js";
 
 const TestNotification = new Toast({
-	content: "Hello World",
+	content: "Test asdhasdasd",
 	persistent: true,
 	interactable: false
 });
@@ -18,10 +18,10 @@ const TestNotification3 = new Toast({
 	interactable: true
 });
 
-// setTimeout(() => {
-// 	TestNotification.hide();
+setTimeout(() => {
+	TestNotification.hide();
 
-// 	setTimeout(() => {
-// 		TestNotification.show();
-// 	}, 2000);
-// }, 2000);
+	setTimeout(() => {
+		TestNotification.show();
+	}, 2000);
+}, 2000);

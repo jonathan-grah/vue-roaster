@@ -25,7 +25,7 @@ import Toast from "toasters";
 
 new Toast({
   content: "Hello World",
-  persistant: true
+  persistent: true
 });
 ```
 

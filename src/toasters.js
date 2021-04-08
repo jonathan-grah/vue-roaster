@@ -4,19 +4,20 @@ let incrementer = 0;
 
 export default class Toast {
 	// should add type checking
-	constructor({ content, persistent, timeout }) {
+	constructor({ content, persistent, interactable, timeout }) {
 		this.identifier = `toast-${incrementer}`;
 		incrementer++;
 
 		this.visible = false;
 
 		this.content = content;
-		this.persistent = persistent;
-		this.timeout = timeout;
+		this.persistent = persistent !== undefined ? persistent : false;
+		this.timeout = timeout ? timeout : 6000;
+		this.interactable = interactable !== undefined ? interactable : true;
 
 		if (!this.persistent) this.startTimer();
 
-		this.dragListener();
+		if (this.interactable) this.dragListener();
 	}
 
 	get content() {
@@ -25,14 +26,7 @@ export default class Toast {
 
 	set content(value) {
 		this._content = value;
-		this.display();
-	}
-
-	startTimer() {
-		setTimeout(this.clear.bind(this), this.timeout ? this.timeout : 6000);
-	}
-
-	display() {
+		
 		if (!this.visible) {
 			container.insertAdjacentHTML("beforeend", `<div class="toast ${this.identifier}">${this.content}</div>`);
 			this.find();
@@ -40,6 +34,10 @@ export default class Toast {
 			this.element.innerHTML = this.content;
 
 		this.visible = true;
+	}
+
+	startTimer() {
+		setTimeout(this.destroy.bind(this), this.timeout);
 	}
 
 	dragListener() {
@@ -88,7 +86,7 @@ export default class Toast {
 	}
 
 	handleInputLoss() {
-		if (this.element.style.opacity < 0.15) return this.clear();
+		if (this.element.style.opacity < 0.15) return this.destroy();
 		else {
 			this.element.style.opacity = 1;
 			this.element.style.left = 0;
@@ -105,7 +103,21 @@ export default class Toast {
 				return this.element = container.childNodes[i];
 	}
 
-	clear() {
+	destroy() {
 		this.element.remove();
+	}
+
+	show() {
+		if (!this.visible) {
+			this.element.style.display = "block";
+			this.visible = true;
+		}
+	}
+
+	hide() {
+		if (this.visible) {
+			this.element.style.display = "none";
+			this.visible = false;
+		}
 	}
 }

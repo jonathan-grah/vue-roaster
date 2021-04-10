@@ -4,11 +4,9 @@ let incrementer = 0;
 
 export default class Toast {
 	// should add type checking
-	constructor({ content, persistent, interactable, timeout }) {
+	constructor({ content, persistent, interactable, timeout, visible }) {
 		this.identifier = `toast-${incrementer}`;
 		incrementer++;
-
-		this.visible = false;
 
 		this.persistent = persistent !== undefined ? persistent : false;
 		this.timeout = timeout ? timeout : 6000;
@@ -16,9 +14,22 @@ export default class Toast {
 
 		this.content = content;
 
+		this.visible = visible !== undefined ? visible : true;
+
 		if (!this.persistent) this.startTimer();
 
 		if (this.interactable) this.dragListener();
+	}
+
+	get visible() {
+		return this._visible;
+	}
+
+	set visible(value) {
+		this._visible = value;
+
+		if (!this.visible) this.hide();
+		else this.show();
 	}
 
 	get content() {
@@ -45,8 +56,6 @@ export default class Toast {
 			// detect click on "close" icon and therefore destroy the toast
 			this.element.children[0].addEventListener("click", () => this.destroy(), false);
 		}
-
-		this.visible = true;
 	}
 
 	startTimer() {
@@ -121,16 +130,12 @@ export default class Toast {
 	}
 
 	show() {
-		if (!this.visible) {
-			this.element.style.display = "flex";
-			this.visible = true;
-		}
+		this.element.style.display = "flex";
+		if (!this.visible) this.visible = true;
 	}
 
 	hide() {
-		if (this.visible) {
-			this.element.style.display = "none";
-			this.visible = false;
-		}
+		this.element.style.display = "none";
+		if (this.visible) this.visible = false;
 	}
 }

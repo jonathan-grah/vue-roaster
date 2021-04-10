@@ -44,6 +44,7 @@ new Toast({
 | **`persistent`** | Boolean | `false` | Whether or not the toast is persistent. |
 | **`interactable`** | Boolean | `true` | If the toast can be manually closed or not. |
 | **`timeout`** | Number | `6000` | How long till the toast disappears. *Note: will be ignored if the toast is persistent.* |
+| **`visible`** | Boolean | `true` | If the toast will be visible when instantiated. |
 
 ## Potential future additions
 

@@ -6,25 +6,23 @@ import Toast from "../dist/toasters.js";
 // 	interactable: false
 // });
 
+const TestNotification1 = new Toast("1", { timeout: 1000 });
+
+
 const TestNotification2 = new Toast({
 	content: "2",
 	persistent: true,
 	interactable: true
 });
 
+// setTimeout(() => {
+// 	TestNotification2.show();
+// }, 2000);
 
-setTimeout(() => {
-	TestNotification2.show();
-}, 2000);
 
+// setTimeout(() => {
+// 	TestNotification2.visible = false;
+// }, 4000);
 
-setTimeout(() => {
-	TestNotification2.visible = false;
-}, 4000);
-
-// const TestNotification3 = new Toast({
-// 	content: "lorem ispum lorem hello my name is lorem ispum lorem ispum lorem ispum lorem ispum ",
-// 	persistent: true,
-// 	interactable: true
-// });
+const TestNotification3 = new Toast("lorem ispum lorem hello my name is lorem ispum lorem ispum lorem ispum lorem ispum ", { interactable: false });
 

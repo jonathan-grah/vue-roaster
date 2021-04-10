@@ -23,13 +23,17 @@
 ```js
 import Toast from "toasters";
 
-new Toast(options);
-
 // example
 new Toast({
   content: "Hello World",
-  persistent: true
+  interactable: false
 });
+
+// or
+new Toast("Hello World");
+
+// or
+new Toast("Hello World", { persistent: true, timeout: 9000 });
 ```
 
 **Preview:**

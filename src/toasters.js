@@ -4,17 +4,23 @@ let incrementer = 0;
 
 export default class Toast {
 	// should add type checking
-	constructor({ content, persistent, interactable, timeout, visible }) {
+	constructor(...args) {
+		let options = {};
+
+		if (typeof args[0] === "object") options = args[0];
+		else if (typeof args[0] === "string" && typeof args[1] === "object") options = { ...args[1], content: args[0] };
+		else if (typeof args[0] === "string") options.content = args[0];
+
 		this.identifier = `toast-${incrementer}`;
 		incrementer++;
 
-		this.persistent = persistent !== undefined ? persistent : false;
-		this.timeout = timeout ? timeout : 6000;
-		this.interactable = interactable !== undefined ? interactable : true;
+		this.persistent = options.persistent !== undefined ? options.persistent : false;
+		this.timeout = options.timeout ? options.timeout : 6000;
+		this.interactable = options.interactable !== undefined ? options.interactable : true;
 
-		this.content = content;
+		this.content = options.content;
 
-		this.visible = visible !== undefined ? visible : true;
+		this.visible = options.visible !== undefined ? options.visible : true;
 
 		if (!this.persistent) this.startTimer();
 

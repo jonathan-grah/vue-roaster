@@ -6,13 +6,13 @@ import Toast from "../dist/toasters.js";
 // 	interactable: false
 // });
 
-const TestNotification1 = new Toast("1", { timeout: 1000 });
+const TestNotification1 = new Toast("Hello world 1 asdsad asds", { persistent: true });
 
 
 const TestNotification2 = new Toast({
-	content: "2",
+	content: "Hello World test 2",
 	persistent: true,
-	interactable: true
+	interactable: false
 });
 
 // setTimeout(() => {
@@ -24,5 +24,5 @@ const TestNotification2 = new Toast({
 // 	TestNotification2.visible = false;
 // }, 4000);
 
-const TestNotification3 = new Toast("lorem ispum lorem hello my name is lorem ispum lorem ispum lorem ispum lorem ispum ", { interactable: false });
+const TestNotification3 = new Toast("lorem ispum lorem hello lorem ispum lorem ispum lorem ispum lorem ispum ", { interactable: false });
 

@@ -122,7 +122,7 @@ export default class Toast {
 
 	show() {
 		if (!this.visible) {
-			this.element.style.display = "block";
+			this.element.style.display = "flex";
 			this.visible = true;
 		}
 	}

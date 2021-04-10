@@ -20,6 +20,7 @@ const TestNotification = new Toast({
 
 const TestNotification3 = new Toast({
 	content: "lorem ispum lorem hello my name is lorem ispum lorem ispum lorem ispum lorem ispum ",
+	persistent: true,
 	interactable: true
 });
 
